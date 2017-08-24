@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.102" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.originalalex.github.visual.Controller">
+   <top>
+      <Text fill="#6708cc" strokeType="OUTSIDE" strokeWidth="0.0" text="Gmail Spammer (WIP)" BorderPane.alignment="CENTER">
+         <font>
+            <Font name="Book Antiqua" size="18.0" />
+         </font>
+      </Text>
+   </top>
+   <left>
+      <ListView fx:id="messages" prefHeight="384.0" prefWidth="164.0" BorderPane.alignment="CENTER" />
+   </left>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="#e40c0c" layoutX="22.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SIGN-IN DETAILS" wrappingWidth="156.13671875">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Text>
+            <TextArea fx:id="emailAddress" layoutX="16.0" layoutY="65.0" prefHeight="38.0" prefWidth="151.0" promptText="E-Mail Address" />
+            <Button layoutX="22.0" layoutY="169.0" mnemonicParsing="false" onAction="#login" text="Login" />
+            <Text fill="#e40c0c" layoutX="218.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="DETAILS" wrappingWidth="156.13671875">
+               <font>
+                  <Font name="Arial Black" size="14.0" />
+               </font>
+            </Text>
+            <TextArea fx:id="targetAddress" layoutX="218.0" layoutY="65.0" prefHeight="38.0" prefWidth="151.0" promptText="Target E-Mail Address" />
+            <TextArea fx:id="emailSubject" layoutX="218.0" layoutY="115.0" prefHeight="38.0" prefWidth="151.0" promptText="E-Mail Subject" />
+            <TextArea fx:id="emailMessage" layoutX="218.0" layoutY="207.0" prefHeight="38.0" prefWidth="151.0" promptText="Message" />
+            <Button layoutX="231.0" layoutY="263.0" mnemonicParsing="false" onAction="#addMessageToList" text="Add Message To List" />
+            <ImageView fx:id="bomb" fitHeight="150.0" fitWidth="200.0" layoutX="15.0" layoutY="200.0" onMouseClicked="#imageClicked" pickOnBounds="true" preserveRatio="true" />
+            <TextArea fx:id="numberOfEmails" layoutX="218.0" layoutY="162.0" prefHeight="38.0" prefWidth="151.0" promptText="Number Of Emails" />
+            <PasswordField fx:id="emailPass" layoutX="18.0" layoutY="122.0" prefHeight="21.0" prefWidth="149.0" promptText="Password" />
+            <Button layoutX="113.0" layoutY="169.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
+         </children>
+      </AnchorPane>
+   </center>
+   <bottom>
+      <Text fx:id="status" strokeType="OUTSIDE" strokeWidth="0.0" text="STATUS: PENDING" BorderPane.alignment="CENTER" />
+   </bottom>
+</BorderPane>
