@@ -71,7 +71,11 @@ public class Controller {
 
     @FXML
     public void addMessageToList() {
-        String message = emailMessage.getText();
+        String message = emailMessage.getText().trim();
+        if (message.equals("")) {
+            status.setText("STATUS: INVALID MESSAGE");
+            return;
+        }
         if (!messages.getItems().contains(message)) {
             messages.getItems().add(message);
             status.setText("STATUS: ADDED MESSAGE");
